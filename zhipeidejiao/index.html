@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="支配的教坛 - 深度解析教育管理与领导力，探讨教学掌控、课堂秩序与师生关系的策略指南。提供教育心理学应用、班主任管理技巧及高效课堂构建方案。">
+    <meta name="keywords" content="支配的教坛, 教育管理, 课堂掌控, 师生关系, 班主任技巧, 教育心理学">
+    <title>支配的教坛-教育管理与课堂掌控策略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Featured Section */
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 240px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f0f2f5;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Core Principles Section */
+        .principles-section {
+            background-color: white;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .principles-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .principle-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+        }
+
+        .principle-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .principle-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .principle-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+            background-color: #fafafa;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 200px; /* Approximate max height */
+        }
+
+        .faq-item.active .faq-question {
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+
+            nav ul {
+                display: none; /* In real implementation, add JS toggle */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <div>支配的<span>教坛</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">课堂掌控</a></li>
+                    <li><a href="#">教育心理学</a></li>
+                    <li><a href="#">班主任实务</a></li>
+                    <li><a href="#">教学管理</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>重塑课堂秩序，掌握教育主动权</h1>
+            <p>探索高效课堂管理与师生关系的深层逻辑，从心理学角度解析如何在不失亲和力的前提下建立有效的教学权威。</p>
+            <a href="#core-principles" class="cta-button">了解核心策略</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main>
+            <section class="articles-list">
+                <div class="section-title">
+                    <h2>最新策略与深度解析</h2>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/classroom1/800/400" alt="高效课堂管理" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>2023-10-24</span>
+                            <span>课堂掌控</span>
+                        </div>
+                        <h3 class="article-title"><a href="#">如何建立不可动摇的课堂权威：非惩罚性管理策略</a></h3>
+                        <p class="article-excerpt">真正的“支配”并非依靠吼叫或惩罚，而是建立在清晰规则与坚定执行之上。本文将介绍三种构建教师权威的心理机制，帮助您在不破坏师生关系的前提下维持秩序。</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/psychology2/800/400" alt="教育心理学" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>2023-10-20</span>
+                            <span>教育心理学</span>
+                        </div>
+                        <h3 class="article-title"><a href="#">学生服从心理的底层逻辑：从斯金纳箱看课堂反馈</a></h3>
+                        <p class="article-excerpt">利用正强化与消退原理，我们可以设计出更高效的课堂激励机制。分析学生行为背后的动机，让“支配”成为一种自然的引导过程而非强制压迫。</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/class3/800/400" alt="班主任实务" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>2023-10-15</span>
+                            <span>班主任实务</span>
+                        </div>
+                        <h3 class="article-title"><a href="#">打破“差生”标签：通过差异化控制实现共同进步</a></h3>
+                        <p class="article-excerpt">面对班级中的“刺头”学生，传统的压制往往适得其反。本文分享如何通过建立私人契约和设定微小目标，逐步收回课堂控制权，让每个学生都在掌控之中。</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+            </section>
+
+            <section id="core-principles" class="principles-section">
+                <div class="section-title">
+                    <h2>课堂掌控的四大核心支柱</h2>
+                </div>
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <div class="principle-icon">⚖️</div>
+                        <h3>规则明确</h3>
+                        <p>没有模糊地带的规则才是真正的规则。清晰的边界能减少学生的试探行为，降低管理成本。</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-icon">👁️</div>
+                        <h3>目光控制</h3>
+                        <p>非语言的注意力管理是最高级的“支配”。通过眼神接触和站位移动，在不打断教学节奏的情况下控制全场。</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-icon">🔄</div>
+                        <h3>动态调整</h3>
+                        <p>权威不是静态的，而是动态的。根据课堂气氛实时调整指令的严厉程度，保持教师的掌控力弹性。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h4 class="widget-title">热门专题</h4>
+                <ul class="category-list">
+                    <li><a href="#">课堂纪律重建指南</a></li>
+                    <li><a href="#">高控型教师的自我救赎</a></li>
+                    <li><a href="#">如何处理课堂突发冲突</a></li>
+                    <li><a href="#">构建积极的师生契约</a></li>
+                    <li><a href="#">作业管理的艺术</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">热门标签</h4>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">课堂控制</a>
+                    <a href="#" class="tag">教师权威</a>
+                    <a href="#" class="tag">心理博弈</a>
+                    <a href="#" class="tag">行为矫正</a>
+                    <a href="#" class="tag">教学管理</a>
+                    <a href="#" class="tag">执行力</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">推荐阅读</h4>
+                <ul class="category-list">
+                    <li><a href="#">从“管住嘴”开始掌控课堂</a></li>
+                    <li><a href="#">沉默的力量：无声指令的艺术</a></li>
+                    <li><a href="#">建立威信的三个关键瞬间</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">什么是教育管理中的“有效支配”？</div>
+            <div class="faq-answer">
+                <p>有效支配是指教师在不牺牲学生自主性和心理健康的前提下，通过专业能力、人格魅力和系统方法，引导课堂秩序和学生行为的能力。它区别于暴政，强调的是影响力而非强制力。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何平衡严格管理与师生关系？</div>
+            <div class="faq-answer">
+                <p>关键在于“严慈相济”。在原则问题上必须坚定，但在执行过程中保持尊重和耐心。建立信任关系是长期维持课堂秩序的基础，严厉的规则配合温暖的互动才能形成良性循环。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">面对极度活跃的班级，第一步该做什么？</div>
+            <div class="faq-answer">
+                <p>首先建立一套简明、可执行的规则，并在第一天就严格执行。其次，通过非语言的信号（如眼神、手势）建立“注意机制”，让学生知道您的关注点在哪里。切忌在混乱中大喊大叫。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>支配的教坛</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">致力于为教育工作者提供专业的课堂管理策略与心理学支持，帮助您构建高效、有序且充满活力的教学环境。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">策略专栏</a></li>
+                    <li><a href="#">资源下载</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门领域</h4>
+                <ul>
+                    <li><a href="#">班主任管理</a></li>
+                    <li><a href="#">课堂教学艺术</a></li>
+                    <li><a href="#">学生心理分析</a></li>
+                    <li><a href="#">教育制度探讨</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 支配的教坛. All Rights Reserved. 本站内容仅供教育交流参考，不代表官方立场。
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) {
+                        child.classList.remove('active');
+                    }
+                });
+
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Mobile Menu Logic (Simple implementation)
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        menuBtn.addEventListener('click', () => {
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '70px';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.backgroundColor = 'white';
+                navUl.style.padding = '20px';
+                navUl.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+  </html>
