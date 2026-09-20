@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="后妃殇 - 深度解析中国古代宫廷后妃制度、历史轶事与兴衰沉浮。提供宫廷生活考据、人物传记及历史研究资料，带您走进真实的历史深处。">
+    <meta name="keywords" content="后妃殇,古代宫廷,后妃制度,历史人物,宫廷秘闻,中国古代史">
+    <title>后妃殇-中国古代宫廷后妃制度与兴衰沉浮的历史档案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e354a; /* 宫墙红 */
+            --secondary-color: #2c2c2c; /* 深墨 */
+            --accent-color: #cfa374; /* 金粉 */
+            --bg-color: #f9f7f2; /* 宣纸白 */
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 4px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Songti SC", "SimSun", "STSong", "Georgia", serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-right: 8px;
+            border: 2px solid var(--primary-color);
+            padding: 2px 6px;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/palace/1600/900') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 4px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 2px;
+            font-size: 16px;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        /* 核心概念 */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* 分类卡片 */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* 典故与轶事 */
+        .legacy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .legacy-item {
+            display: flex;
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .legacy-date {
+            min-width: 100px;
+            text-align: center;
+            border-right: 1px solid #eee;
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        .legacy-date .year {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .legacy-date .month {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .legacy-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .legacy-content p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* 问答区 */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 15px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding-bottom: 15px;
+            color: var(--text-light);
+            font-size: 15px;
+            display: none;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legacy-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .legacy-date {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                margin-right: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo"><span>殇</span>后妃殇</a>
+            <nav>
+                <ul>
+                    <li><a href="#intro" class="active">历史概览</a></li>
+                    <li><a href="#categories">宫廷制度</a></li>
+                    <li><a href="#legacy">兴衰轶事</a></li>
+                    <li><a href="#faq">常见疑问</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>后妃殇</h1>
+                <p>探寻深宫红墙内的兴衰沉浮，还原真实的历史档案与宫廷生活。</p>
+                <a href="#intro" class="btn">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <div class="section-title" style="text-align: left; margin-bottom: 30px;">
+                            <h2>深宫档案</h2>
+                            <p>了解中国古代后宫制度的演变与运作机制</p>
+                        </div>
+                        <p>“后妃殇”不仅仅是对逝去生命的哀悼，更是对那个时代女性命运的深刻审视。在古代中国，后宫是一个庞大而森严的等级体系，皇权的延伸使得后妃的生存状态与国家兴衰紧密相连。</p>
+                        <p>从秦汉的六宫之制到明清的选秀制度，后妃的选拔、晋升、失宠与死亡，构成了中国古代历史最隐秘也最波澜壮阔的篇章。这里记录的，是那些被史书留名的名字背后，真实的生存法则与人性挣扎。</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://picsum.photos/seed/history/600/400" alt="古代宫廷历史画卷">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>宫廷制度</h2>
+                    <p>剖析等级森严的后宫管理体系</p>
+                </div>
+                <div class="categories-grid">
+                    <article class="category-card">
+                        <div class="category-icon">👑</div>
+                        <h3>皇贵妃与贵妃</h3>
+                        <p>仅次于皇后的高位妃嫔，掌管六宫事务，是后宫权力的核心。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">📜</div>
+                        <h3>选秀制度</h3>
+                        <p>八旗选秀与民女选秀，决定了新血如何进入紫禁城。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">📅</div>
+                        <h3>年节礼仪</h3>
+                        <p>千秋节、万寿节等宫廷大礼，彰显皇权与等级秩序。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="category-icon">⚖️</div>
+                        <h3>册封与晋升</h3>
+                        <p>从答应到皇贵妃，晋升之路充满机遇与残酷的竞争。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy Section -->
+        <section id="legacy" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>兴衰轶事</h2>
+                    <p>记录那些改变历史走向的后妃命运</p>
+                </div>
+                <div class="legacy-list">
+                    <div class="legacy-item">
+                        <div class="legacy-date">
+                            <span class="year">1644</span>
+                            <span class="month">崇祯十七年</span>
+                        </div>
+                        <div class="legacy-content">
+                            <h3>明末后妃的悲剧</h3>
+                            <p>明朝灭亡之际，崇祯皇帝在煤山自缢。随其而去的周皇后、袁贵妃以及多名宫女殉节。这一事件标志着中国历史上最后一个汉族王朝的落幕，也展现了皇权末路时后宫女性的决绝。</p>
+                        </div>
+                    </div>
+                    <div class="legacy-item">
+                        <div class="legacy-date">
+                            <span class="year">1735</span>
+                            <span class="month">雍正十三年</span>
+                        </div>
+                        <div class="legacy-content">
+                            <h3>乾隆朝的后宫格局</h3>
+                            <p>乾隆皇帝一生阅人无数，后宫妃嫔众多。通过“令妃”魏佳氏等人的晋升轨迹，可以清晰地看到清朝中叶后宫权力的运作模式，以及皇帝情感与政治平衡的微妙关系。</p>
+                        </div>
+                    </div>
+                    <div class="legacy-item">
+                        <div class="legacy-date">
+                            <span class="year">1908</span>
+                            <span class="month">光绪三十四年</span>
+                        </div>
+                        <div class="legacy-content">
+                            <h3>晚清的动荡与终结</h3>
+                            <p>光绪皇帝与慈禧太后相继驾崩，隆裕皇后垂帘听政。随着辛亥革命的爆发，清朝后宫制度在历史的风暴中彻底瓦解，那些曾经不可一世的后妃们也最终湮没于历史尘埃。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见疑问</h2>
+                    <p>关于中国古代后妃制度的深度解读</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">什么是“六宫”？</div>
+                        <div class="faq-answer">
+                            “六宫”一词最早见于《周礼》，后来成为后妃居住地的代称。在清朝，通常指皇后居住的中宫以及东、西六宫，统称为六宫，由皇后统摄，管理后宫事务。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">后妃的晋升主要看什么？</div>
+                        <div class="faq-answer">
+                            后妃的晋升主要取决于皇帝的宠爱程度、子嗣的出生（尤其是皇子的出生）、家族的势力背景以及宫廷政治局势。生下皇子是晋升最快的途径。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">被废黜的后妃下场如何？</div>
+                        <div class="faq-answer">
+                            被皇帝下令废黜或赐死的后妃，通常会被迁出皇宫，安置在偏远的宫苑或尼姑庵，甚至被赐毒酒或绞死。历史上著名的如汉武帝陈阿娇、唐玄宗杨贵妃等。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于后妃殇</h4>
+                    <p style="font-size: 14px; line-height: 1.6;">致力于挖掘中国古代宫廷历史，还原后妃真实生活，提供严谨的历史考据与科普内容。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#intro">历史概览</a></li>
+                        <li><a href="#categories">宫廷制度</a></li>
+                        <li><a href="#legacy">兴衰轶事</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关阅读</h4>
+                    <ul>
+                        <li><a href="#">清朝选秀制度详解</a></li>
+                        <li><a href="#">古代宫廷饮食文化</a></li>
+                        <li><a href="#">后宫争斗史实考据</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 后妃殇历史档案. 保留所有权利. 本站内容仅供学术研究与科普参考.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 导航栏滚动高亮
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
