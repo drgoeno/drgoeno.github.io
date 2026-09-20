@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="孝义吧 - 山西孝义本地生活信息交流平台，涵盖孝义新闻、生活服务、便民信息、本地美食推荐及孝义文化讨论，是孝义人获取资讯与互动的首选社区。">
+    <meta name="keywords" content="孝义吧,孝义,孝义新闻,孝义生活,孝义论坛,孝义便民,孝义贴吧">
+    <title>孝义吧-孝义本地生活信息交流与社区门户</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* 活力红 */
+            --secondary-color: #f5f5f5;
+            --text-main: #333333;
+            --text-light: #666666;
+            --text-extra: #999999;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: #f4f6f8;
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 顶部导航 */
+        .top-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-nav a {
+            margin-left: 15px;
+            color: var(--text-light);
+        }
+
+        .top-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .logo span {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--secondary-color);
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* 主导航 */
+        .main-nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 15px;
+        }
+
+        .nav-list li a:hover, .nav-list li a.active {
+            background-color: rgba(0,0,0,0.1);
+            color: var(--white);
+        }
+
+        /* 主体布局 */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        /* 左侧内容区 */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 板块标题 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .section-more {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* 帖子列表 */
+        .post-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #eee;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-body {
+            flex: 1;
+        }
+
+        .post-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .username {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: var(--text-extra);
+        }
+
+        .post-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .post-content {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            color: var(--text-light);
+        }
+
+        .tag.hot {
+            background-color: #fff3f0;
+            color: var(--primary-color);
+        }
+
+        .post-footer {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            color: var(--text-extra);
+            border-top: 1px solid #f5f5f5;
+            padding-top: 10px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .action-item:hover {
+            color: var(--primary-color);
+        }
+
+        /* 右侧侧边栏 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .widget {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* 热门榜单 */
+        .rank-list {
+            list-style: none;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-extra);
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .rank-item:nth-child(1) .rank-num { color: #ff4d4f; }
+        .rank-item:nth-child(2) .rank-num { color: #ff7a45; }
+        .rank-item:nth-child(3) .rank-num { color: #ffa940; }
+
+        .rank-title {
+            font-size: 14px;
+            color: var(--text-main);
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 便民服务 */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 15px 5px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .service-item:hover {
+            background: #f0f0f0;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .service-text {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* 城市快讯 */
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .news-date {
+            background: #e6f7ff;
+            color: #1890ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+            height: fit-content;
+            margin-top: 2px;
+        }
+
+        .news-content h4 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .news-content p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2b2b2b;
+            color: #999;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3d3d3d;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-list {
+                padding: 0 10px;
+            }
+            
+            .post-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部工具栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="location">📍 山西 · 孝义</div>
+            <nav class="top-nav">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">发布帖子</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>孝义吧 <span>BBS</span></h1>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索孝义本地信息、新闻或求助...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="#">同城热聊</a></li>
+            <li><a href="#">孝义新闻</a></li>
+            <li><a href="#">房产家居</a></li>
+            <li><a href="#">招聘求职</a></li>
+            <li><a href="#">二手交易</a></li>
+            <li><a href="#">孝义美食</a></li>
+            <li><a href="#">孝义生活</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main class="container">
+        
+        <!-- 左侧：帖子列表 -->
+        <section class="main-content">
+            
+            <!-- 帖子分类Tab -->
+            <div style="display: flex; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <button style="background: none; border: none; font-size: 16px; font-weight: 600; color: var(--primary-color); cursor: pointer;">综合推荐</button>
+                <button style="background: none; border: none; font-size: 16px; color: var(--text-light); cursor: pointer;">最新发布</button>
+                <button style="background: none; border: none; font-size: 16px; color: var(--text-light); cursor: pointer;">热门话题</button>
+            </div>
+
+            <!-- 帖子卡片 1 -->
+            <article class="post-card">
+                <div class="avatar">
+                    <img src="https://picsum.photos/seed/user1/100/100" alt="用户头像">
+                </div>
+                <div class="post-body">
+                    <div class="post-top">
+                        <div class="user-info">
+                            <span class="username">孝义老表</span>
+                            <span class="post-meta">2小时前</span>
+                        </div>
+                        <span class="tag hot">置顶</span>
+                    </div>
+                    <h2 class="post-title"><a href="#">孝义市2024年秋季人才引进公告发布，急需各类专业人才加入！</a></h2>
+                    <p class="post-content">为深入实施人才强市战略，进一步优化我市人才结构，经研究决定，面向社会公开招聘一批事业单位工作人员。本次招聘涉及教育、医疗、文化等多个领域，待遇从优...</p>
+                    <div class="post-tags">
+                        <span class="tag">孝义招聘</span>
+                        <span class="tag">人才引进</span>
+                        <span class="tag">本地资讯</span>
+                    </div>
+                    <div class="post-footer">
+                        <span class="action-item">💬 328 回复</span>
+                        <span class="action-item">👁️ 1.2w 浏览</span>
+                        <span class="action-item">👍 562 赞</span>
+                        <span class="action-item">🔗 分享</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 帖子卡片 2 -->
+            <article class="post-card">
+                <div class="avatar">
+                    <img src="https://picsum.photos/seed/user2/100/100" alt="用户头像">
+                </div>
+                <div class="post-body">
+                    <div class="post-top">
+                        <div class="user-info">
+                            <span class="username">吃货小王</span>
+                            <span class="post-meta">5小时前</span>
+                        </div>
+                        <span class="tag">美食</span>
+                    </div>
+                    <h2 class="post-title"><a href="#">【求助】孝义哪里的羊杂割最好吃？求推荐！</a></h2>
+                    <p class="post-content">最近天气转凉，特别想吃一碗热腾腾的羊杂割。在孝义生活这么久，吃过很多家，感觉大同路那家不错，但听说西门口新开了一家也不错，有没有去过的小伙伴推荐一下？</p>
+                    <div class="post-tags">
+                        <span class="tag">美食推荐</span>
+                        <span class="tag">羊杂割</span>
+                        <span class="tag">探店</span>
+                    </div>
+                    <div class="post-footer">
+                        <span class="action-item">💬 45 回复</span>
+                        <span class="action-item">👁️ 890 浏览</span>
+                        <span class="action-item">👍 32 赞</span>
+                        <span class="action-item">🔗 分享</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 帖子卡片 3 -->
+            <article class="post-card">
+                <div class="avatar">
+                    <img src="https://picsum.photos/seed/user3/100/100" alt="用户头像">
+                </div>
+                <div class="post-body">
+                    <div class="post-top">
+                        <div class="user-info">
+                            <span class="username">孝义房产观察</span>
+                            <span class="post-meta">昨天</span>
+                        </div>
+                        <span class="tag">房产</span>
+                    </div>
+                    <h2 class="post-title"><a href="#">孝义二手房市场分析：下半年房价走势如何？</a></h2>
+                    <p class="post-content">近期走访了孝义市几个主要的二手房交易市场，发现市场活跃度有所回升。特别是离市区较近的几个小区，看房量明显增加。刚需买房的朋友可以多关注一下...</p>
+                    <div class="post-tags">
+                        <span class="tag">房产资讯</span>
+                        <span class="tag">二手房</span>
+                        <span class="tag">孝义楼市</span>
+                    </div>
+                    <div class="post-footer">
+                        <span class="action-item">💬 120 回复</span>
+                        <span class="action-item">👁️ 5.6k 浏览</span>
+                        <span class="action-item">👍 89 赞</span>
+                        <span class="action-item">🔗 分享</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 帖子卡片 4 -->
+            <article class="post-card">
+                <div class="avatar">
+                    <img src="https://picsum.photos/seed/user4/100/100" alt="用户头像">
+                </div>
+                <div class="post-body">
+                    <div class="post-top">
+                        <div class="user-info">
+                            <span class="username">孝义便民</span>
+                            <span class="post-meta">昨天</span>
+                        </div>
+                        <span class="tag">求助</span>
+                    </div>
+                    <h2 class="post-title"><a href="#">【寻物】在孝义崇文园附近丢失黑色背包一个</a></h2>
+                    <p class="post-content">今天下午在崇文园附近散步时丢失了一个黑色双肩包，里面有笔记本电脑和重要证件，求好心人帮忙留意或联系，必有重谢！联系电话：138xxxx8888。</p>
+                    <div class="post-tags">
+                        <span class="tag">寻物启事</span>
+                        <span class="tag">孝义生活</span>
+                    </div>
+                    <div class="post-footer">
+                        <span class="action-item">💬 88 回复</span>
+                        <span class="action-item">👁️ 2.3k 浏览</span>
+                        <span class="action-item">👍 156 赞</span>
+                        <span class="action-item">🔗 分享</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 右侧：侧边栏 -->
+        <aside>
+            
+            <!-- 便民服务 -->
+            <div class="widget">
+                <h3 class="widget-title">便民服务</h3>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <span class="service-icon">🚗</span>
+                        <span class="service-text">车辆违章</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏥</span>
+                        <span class="service-text">医院挂号</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🚌</span>
+                        <span class="service-text">公交查询</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏘️</span>
+                        <span class="service-text">物业报修</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">👮</span>
+                        <span class="service-text">报警电话</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">📞</span>
+                        <span class="service-text">市长热线</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热门话题 -->
+            <div class="widget">
+                <h3 class="widget-title">🔥 热门话题</h3>
+                <ul class="rank-list">
+                    <li class="rank-item">
+                        <span class="rank-num">1</span>
+                        <span class="rank-title">孝义市创建文明城市</span>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">2</span>
+                        <span class="rank-title">孝义老城区改造规划</span>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">3</span>
+                        <span class="rank-title">孝义大孝堡美食节</span>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">4</span>
+                        <span class="rank-title">孝义吾悦广场开业</span>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">5</span>
+                        <span class="rank-title">孝义相亲角活动</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 城市快讯 -->
+            <div class="widget">
+                <h3 class="widget-title">📰 城市快讯</h3>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <div class="news-date">10/24</div>
+                        <div class="news-content">
+                            <h4>孝义市开展秋季森林防火巡查</h4>
+                            <p>为切实做好秋季森林防火工作...</p>
+                        </div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">10/23</div>
+                        <div class="news-content">
+                            <h4>孝义市人民医院新院区投入使用</h4>
+                            <p>医疗设施全面升级，服务能力...</p>
+                        </div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">10/22</div>
+                        <div class="news-content">
+                            <h4>孝义市举办重阳节敬老爱老活动</h4>
+                            <p>弘扬传统文化，关爱老年群体...</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 广告位占位 -->
+            <div class="widget" style="background: #e6f7ff; display: flex; align-items: center; justify-content: center; color: #1890ff; min-height: 150px;">
+                <div style="text-align: center;">
+                    <h4>孝义便民信息发布</h4>
+                    <p style="font-size: 12px; margin-top: 5px;">免费发布您的信息</p>
+                </div>
+            </div>
+
+        </aside>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于孝义吧</h3>
+                <p style="font-size: 13px; line-height: 1.8;">
+                    孝义吧是孝义本地最大的网络社区，致力于为孝义市民提供最真实、最及时的本地资讯与生活服务。我们关注孝义发展，记录孝义生活。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>热门栏目</h3>
+                <ul>
+                    <li><a href="#">孝义同城</a></li>
+                    <li><a href="#">孝义新闻</a></li>
+                    <li><a href="#">二手市场</a></li>
+                    <li><a href="#">房屋租售</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">社区规范</a></li>
+                    <li><a href="#">联系管理员</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>邮箱：contact@xiaoyibar.com</li>
+                    <li>电话：0358-xxxxxxx</li>
+                    <li>地址：山西省孝义市迎宾大道</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 孝义吧 版权所有 | 互联网ICP备案号：XXXXXXXXXX</p>
+        </div>
+    </footer>
+
+</body>
+                          </html>
